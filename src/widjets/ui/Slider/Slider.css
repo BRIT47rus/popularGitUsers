@@ -19,3 +19,15 @@
 .slider__right {
     cursor: pointer;
 }
+.slider__rep-wrap {
+    display: flex;
+    width: 200px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    outline: 1px solid red;
+}
+.slider__rep-wrap > * {
+    scroll-snap-align: start;
+    /* flex: 0 0 auto; */
+}

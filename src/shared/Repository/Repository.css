@@ -6,6 +6,7 @@
     flex-direction: column;
     padding: 0 1em;
     line-height: 1.6em;
+    outline: 1px solid yellow;
 }
 .rep__top {
     color: var(--color-accent);
