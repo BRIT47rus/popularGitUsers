@@ -1,14 +1,22 @@
-import { Header } from '../../widjets/ui/Header/Header';
-import { Slider } from '../../widjets/ui/Slider/Slider';
+import { Provider } from 'react-redux';
+import { Header, Slider } from '../../widjets';
 import './App.css';
+import { store } from '../../features/store/store';
 
 export function App() {
     return (
-        <div className="app-container">
-            <div className="app__header-wrap">
-                <Header text="Топ популярных javascript репозиториев" />
+        <Provider store={store}>
+            <div className="app-container">
+                <div className="app__header-wrap">
+                    <Header text="Топ популярных javascript репозиториев" />
+                </div>
+                <Slider />
+                {/* <ModalRep
+                text="React"
+                description="A declarative, efficient, and flexible JavaScript library for building user interfaces."
+                nameCompany="Facebook"
+            /> */}
             </div>
-            <Slider />
-        </div>
+        </Provider>
     );
 }

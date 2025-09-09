@@ -20,7 +20,8 @@
 }
 .rep__icons {
     display: flex;
-    padding: 0.5em 1em;
+    padding-right: 0.5em;
+    margin-top: 1em;
 }
 .rep__icons svg {
     margin-right: 0.5em;
