@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+.rep {
+    font-family: 'Roboto Mono', monospace;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1em;
+    line-height: 1.6em;
+}
+.rep__top {
+    color: var(--color-accent);
+    font-weight: 900;
+    font-size: 1.5em;
+}
+.rep__description {
+    margin-top: 0.5em;
+}
+.rep__bottom {
+    display: flex;
+}
+.rep__icons {
+    display: flex;
+    padding: 0.5em 1em;
+}
+.rep__icons svg {
+    margin-right: 0.5em;
+}
