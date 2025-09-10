@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Repository } from '../../../shared';
+import { Repository, SkeletonRepository } from '../../../shared';
 import './Slider.css';
 import { useGetRepositoriesQuery } from './sliderSlice';
 import { IconLeft } from './ui/IconLeft';
@@ -67,10 +67,6 @@ export const Slider = () => {
         }
     }, [animate, currentIndex]);
 
-    if (isLoading) {
-        return <h1>Загрузка</h1>;
-    }
-
     const handleOnclickRight = () => {
         if (reps.length === 0) return;
 
@@ -106,6 +102,7 @@ export const Slider = () => {
                 <IconLeft />
             </div>
             <div className="slider__rep-wrap">
+                {isLoading && <SkeletonRepository />}
                 {reps &&
                     reps.map((rep, index) => (
                         <Repository

@@ -1,2 +1,4 @@
 import { Repository } from './Repository/Repository';
-export { Repository };
+import { SkeletonRepository } from './SkeletonRepository/SkeletonRepository';
+
+export { Repository, SkeletonRepository };

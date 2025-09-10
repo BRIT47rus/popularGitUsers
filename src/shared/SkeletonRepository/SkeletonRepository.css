@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+.skelet-rep {
+    --border-radius: 0.2em;
+    font-family: 'Roboto Mono', monospace;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1em;
+    line-height: 1.6em;
+
+    pointer-events: none;
+}
+.skelet-rep__top {
+    border-radius: var(--border-radius);
+    min-height: 1em;
+
+    width: 150px;
+    font-size: 1.5em;
+}
+.skelet-rep__description {
+    border-radius: var(--border-radius);
+    min-height: 1em;
+    min-width: 100px;
+    margin-top: 0.5em;
+    flex-grow: 1;
+    width: 300px;
+}
+
+/* .skelet-rep__top, */
+
+.skelet-rep__top {
+    background: linear-gradient(
+        90deg,
+        var(--color-accent) 0%,
+        var(--color-secondary) 50%,
+        var(--color-accent) 75%
+    );
+    background-size: 100% 100%;
+    animation: shimmer 3s infinite;
+}
+.skelet-rep__icon {
+    display: flex;
+    padding-right: 0.5em;
+    margin-top: 1em;
+    border-radius: var(--border-radius);
+    width: 40px;
+}
+
+.skelet-rep__description {
+    background: linear-gradient(
+        90deg,
+        var(--color-secondary) 0%,
+        var(--color-accent) 50%,
+        var(--color-secondary) 100%
+    );
+    background-size: 100% 50%;
+    animation: shimmer 3s infinite;
+}
+.skelet-rep__icon {
+    background: linear-gradient(
+        90deg,
+        var(--color-secondary) 0%,
+        var(--color-accent) 50%,
+        var(--color-secondary) 100%
+    );
+    background-size: 100% 50%;
+    animation: shimmer 6s infinite;
+}
+
+.skelet-rep__bottom {
+    display: flex;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -300px 0;
+    }
+    100% {
+        background-position: 300px 0;
+    }
+}

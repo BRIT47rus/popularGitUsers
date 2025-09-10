@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
 interface Props {
-    count: number;
+    count?: number;
 }
 
 export const StarIcon: FC<Props> = ({ count }) => {
