@@ -11,11 +11,6 @@ export function App() {
                     <Header text="Топ популярных javascript репозиториев" />
                 </div>
                 <Slider />
-                {/* <ModalRep
-                text="React"
-                description="A declarative, efficient, and flexible JavaScript library for building user interfaces."
-                nameCompany="Facebook"
-            /> */}
             </div>
         </Provider>
     );
