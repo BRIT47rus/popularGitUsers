@@ -13,11 +13,13 @@
 }
 .rep__top {
     color: var(--color-accent);
-    font-weight: 900;
+    font-weight: 700;
     font-size: 1.5em;
+    text-transform: uppercase;
 }
 .rep__description {
     margin-top: 0.5em;
+    font-weight: 500;
 }
 .rep__bottom {
     display: flex;

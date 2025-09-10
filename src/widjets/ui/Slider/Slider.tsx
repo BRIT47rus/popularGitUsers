@@ -121,7 +121,6 @@ export const Slider = () => {
                         />
                     ))}
             </div>
-            {/* <SkeletonRepository /> */}
 
             <div className="slider__right" onClick={handleOnclickRight}>
                 <IconRight />

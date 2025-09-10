@@ -6,3 +6,11 @@
     --color-bg: #1e2028;
     --color-bg-body: #272a2f;
 }
+.dark-theme {
+    --color-text: dark;
+    --color-accent: #0083fc;
+    --color-secondary: #b5b5b5;
+
+    --color-bg: #b5b5b5;
+    --color-bg-body: #ffffff;
+}
