@@ -6,11 +6,18 @@ import { IconLeft } from './ui/IconLeft';
 import { IconRight } from './ui/IconRight';
 import type { TRep } from '../../../types';
 
+const AnimateType = {
+    in: 'in',
+    enter: 'enter',
+    out: 'out',
+};
+
 export const Slider = () => {
     const { data, isLoading } = useGetRepositoriesQuery('javascript');
     const [reps, setReps] = useState<TRep[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const refsContainer = useRef<HTMLDivElement[]>([]);
+    const [animate, setAnimate] = useState(AnimateType.enter);
 
     const toogleClassScroll = (next: number = 0, curr?: number) => {
         if (curr !== undefined && refsContainer.current[curr]) {
@@ -33,23 +40,64 @@ export const Slider = () => {
         }
     }, [reps]);
 
+    //-----------------animate
+    useEffect(() => {
+        if (!refsContainer.current[currentIndex]) return;
+
+        if (animate === AnimateType.in) {
+            refsContainer.current[currentIndex].classList.remove(
+                'slider__rep-out',
+                'slider__rep-enter'
+            );
+            refsContainer.current[currentIndex].classList.add('slider__rep-in');
+            setTimeout(() => setAnimate(AnimateType.enter), 500);
+            refsContainer.current[currentIndex].classList.remove(
+                'slider__rep-out'
+            );
+            refsContainer.current[currentIndex].classList.add(
+                'slider__rep-enter'
+            );
+        } else if (animate === AnimateType.out) {
+            refsContainer.current[currentIndex].classList.remove(
+                'slider__rep-enter'
+            );
+            refsContainer.current[currentIndex].classList.add(
+                'slider__rep-out'
+            );
+        }
+    }, [animate, currentIndex]);
+
     if (isLoading) {
         return <h1>Загрузка</h1>;
     }
 
     const handleOnclickRight = () => {
         if (reps.length === 0) return;
+
+        setAnimate(AnimateType.out);
+
         const next = (currentIndex + 1) % reps.length;
-        setCurrentIndex(next);
-        toogleClassScroll(next, currentIndex);
-        refsContainer.current[next]?.scrollIntoView({ behavior: 'smooth' });
+
+        setTimeout(() => {
+            setCurrentIndex(next);
+            toogleClassScroll(next, currentIndex);
+            refsContainer.current[next]?.scrollIntoView({ behavior: 'smooth' });
+            setAnimate(AnimateType.in);
+        }, 500);
     };
+
     const handleOnclickLeft = () => {
         if (reps.length === 0) return;
+        setAnimate(AnimateType.out);
+
         const prev = currentIndex === 0 ? reps.length - 1 : currentIndex - 1;
-        setCurrentIndex(prev);
-        toogleClassScroll(prev, currentIndex);
-        refsContainer.current[prev]?.scrollIntoView({ behavior: 'smooth' });
+
+        setTimeout(() => {
+            setCurrentIndex(prev);
+            toogleClassScroll(prev, currentIndex);
+            refsContainer.current[prev]?.scrollIntoView({ behavior: 'smooth' });
+            setAnimate(AnimateType.in);
+        }, 500);
     };
 
     return (

@@ -37,3 +37,29 @@
     display: inline;
     pointer-events: auto;
 }
+
+.slider__rep-enter {
+    opacity: 1;
+}
+
+.slider__rep-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
