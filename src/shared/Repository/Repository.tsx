@@ -1,11 +1,11 @@
-import type { FC, RefObject } from 'react';
+import type { FC } from 'react';
 import './Repository.css';
 import { ForkIcon } from './ui/ForkIcon';
 import { StarIcon } from './ui/StarIcon';
 import type { TRep } from '../../types';
 
 interface Props extends TRep {
-    containerRef: RefObject<HTMLDivElement>;
+    containerRef?: React.Ref<HTMLDivElement>;
 }
 
 export const Repository: FC<Props> = ({

@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Repository } from '../../../shared';
 import './Slider.css';
 import { useGetRepositoriesQuery } from './sliderSlice';
@@ -11,7 +11,7 @@ export const Slider = () => {
     const [reps, setReps] = useState<TRep[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const refsContainer = useRef<HTMLDivElement[]>([]);
-    // toogleClassScroll(currentIndex);
+
     const toogleClassScroll = (next: number = 0, curr?: number) => {
         if (curr !== undefined && refsContainer.current[curr]) {
             refsContainer.current[curr].classList.remove('slider__rep-active');
@@ -28,7 +28,6 @@ export const Slider = () => {
     }, [data]);
 
     useEffect(() => {
-        // Проверяем, что refs уже есть и reps не пустой
         if (reps.length > 0 && refsContainer.current[0]) {
             toogleClassScroll(0);
         }
@@ -62,7 +61,7 @@ export const Slider = () => {
                 {reps &&
                     reps.map((rep, index) => (
                         <Repository
-                            containerRef={(element: HTMLDivElement) => {
+                            containerRef={(element) => {
                                 if (element)
                                     refsContainer.current[index] = element;
                             }}
