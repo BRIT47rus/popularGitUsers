@@ -3,7 +3,7 @@ import './Button.css';
 import classNames from 'classnames';
 interface Props extends HTMLAttributes<HTMLButtonElement> {
     text: string;
-    onClick: VoidFunction;
+    onClick?: () => void;
     className: string;
 }
 

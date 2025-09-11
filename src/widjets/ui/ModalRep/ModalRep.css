@@ -1,0 +1,26 @@
+.modal-rep {
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+
+    margin-right: auto;
+    margin-left: auto;
+}
+.modal-rep-wrap {
+    position: absolute;
+    top: -1em;
+    bottom: 0;
+    width: 100vw;
+    background: var(--color-bg);
+    height: 100vh;
+    display: flex;
+
+    flex-direction: column;
+}
+.modal__button {
+    text-align: end;
+    margin-right: 5em;
+}
+.modal__button button {
+    font-size: 2em;
+}

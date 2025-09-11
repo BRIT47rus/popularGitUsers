@@ -16,3 +16,4 @@ export const sliderSlice = createApi({
     }),
 });
 export const { useGetRepositoriesQuery } = sliderSlice;
+// https://api.github.com/search/repositories?q=javascript+stars:>10000&sort=stars&order=desc

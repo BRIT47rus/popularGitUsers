@@ -5,6 +5,7 @@ import { useGetRepositoriesQuery } from './sliderSlice';
 import { IconLeft } from './ui/IconLeft';
 import { IconRight } from './ui/IconRight';
 import type { TRep } from '../../../types';
+import { ModalRep } from '../ModalRep/ModalRep';
 
 const AnimateType = {
     in: 'in',
@@ -18,6 +19,14 @@ export const Slider = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const refsContainer = useRef<HTMLDivElement[]>([]);
     const [animate, setAnimate] = useState(AnimateType.enter);
+
+    const [selectedRep, setSelectedRep] = useState<TRep | null>(null);
+    const [isOpenModal, setOpenModal] = useState(false);
+
+    const handleClickOpenModal = (rep: TRep) => {
+        setSelectedRep(rep);
+        setOpenModal(true);
+    };
 
     const toogleClassScroll = (next: number = 0, curr?: number) => {
         if (curr !== undefined && refsContainer.current[curr]) {
@@ -116,10 +125,16 @@ export const Slider = () => {
                             forks={rep.forks}
                             name={rep.name}
                             language={rep.language}
-                            topics={rep.topics}
                             watchers={rep.watchers}
+                            onClick={() => handleClickOpenModal(rep)}
                         />
                     ))}
+                {isOpenModal && selectedRep && (
+                    <ModalRep
+                        text="dd"
+                        onclickClose={() => setOpenModal(false)}
+                    />
+                )}
             </div>
 
             <div className="slider__right" onClick={handleOnclickRight}>

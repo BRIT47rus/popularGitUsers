@@ -8,10 +8,8 @@ import { Button } from '../../shared/Button/Button';
 export function App() {
     const toggleTheme = () => {
         document.documentElement.classList.toggle('dark-theme');
-        const isDark =
-            document.documentElement.classList.contains('dark-theme');
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
     };
+
     return (
         <Provider store={store}>
             <div className={classNames('app-container')}>
@@ -25,6 +23,7 @@ export function App() {
                 className="button-theme"
                 text="THEME"
             />
+            {/* <ModalRep /> */}
         </Provider>
     );
 }
