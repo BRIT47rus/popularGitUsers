@@ -1,25 +1,30 @@
 .modal-rep {
     display: flex;
-    /* justify-content: center; */
-    /* align-items: center; */
-
     margin-right: auto;
     margin-left: auto;
 }
 .modal-rep-wrap {
     position: absolute;
+    top: 0;
+
     height: 100vh;
     width: 100vw;
     display: flex;
-    background: #000;
+    background: var(--color-bg-body);
     flex-direction: column;
 }
 .modal-content {
+    margin-top: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2em;
     background: var(--color-bg);
+    max-width: 600px;
 }
 .modal__button {
     text-align: end;
-    margin-right: 5em;
+    margin-right: 2em;
+    cursor: pointer;
 }
 .modal__button button {
     font-size: 2em;

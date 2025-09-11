@@ -22,6 +22,11 @@ export const Repository: FC<Props> = ({
     className,
     onClick,
 }) => {
+    const getDomain = (urlSTR: string) => {
+        const url = new URL(urlSTR);
+        return url.hostname;
+    };
+
     return (
         <div
             className={classNames('rep', className)}
@@ -32,11 +37,21 @@ export const Repository: FC<Props> = ({
             <div className="rep__description">{description}</div>
 
             {homepage && (
-                <a href={homepage} target="_blank">
-                    {homepage} <span>-------</span>
-                </a>
+                <div>
+                    <a href={homepage} target="_blank" className="rep__link">
+                        {getDomain(homepage)}
+                    </a>
+                </div>
             )}
-            {topics && topics.map((top, i) => <div key={i}>{top}</div>)}
+            {topics && (
+                <div className="rep__topiks">
+                    {topics.map((top, i) => (
+                        <div key={i} className="rep__topik">
+                            {top}
+                        </div>
+                    ))}
+                </div>
+            )}
             <div className="rep__bottom">
                 <StarIcon count={watchers} />
                 <ForkIcon count={forks} />

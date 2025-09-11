@@ -13,12 +13,12 @@ interface Props {
 export const ModalRep: FC<Props> = ({ onclickClose, rep }) => {
     return createPortal(
         <div className="modal-rep-wrap" onClick={onclickClose}>
+            <Button
+                text="✘"
+                className="modal__button "
+                onClick={onclickClose}
+            />
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                <Button
-                    text="✘"
-                    className="modal__button "
-                    onClick={onclickClose}
-                />
                 <Repository
                     className="modal-rep"
                     id={rep.id}

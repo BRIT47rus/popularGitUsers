@@ -3,13 +3,14 @@
 .rep {
     font-family: 'Roboto Mono', monospace;
     display: flex;
+
     flex-direction: column;
     padding: 0 1em;
     line-height: 1.6em;
     min-width: 300px;
     max-width: 500px;
     display: none;
-    pointer-events: none;
+    /* pointer-events: none; */
 }
 .rep__top {
     color: var(--color-accent);
@@ -31,4 +32,22 @@
 }
 .rep__icons svg {
     margin-right: 0.5em;
+}
+.rep__link {
+    color: var(--color-accent);
+    cursor: pointer;
+    text-decoration: none;
+}
+.rep__topiks {
+    display: flex;
+    flex-wrap: wrap;
+}
+.rep__topik {
+    border-radius: 4px;
+    font-size: 0.8em;
+    margin: 0.1em 0.1em;
+    max-width: fit-content;
+    padding: 0.1em 0.5em;
+    background: var(--color-accent);
+    pointer-events: none;
 }
