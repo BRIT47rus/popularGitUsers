@@ -3,15 +3,14 @@ import { Repository } from '../../../shared';
 import { createPortal } from 'react-dom';
 import { Button } from '../../../shared/Button/Button';
 import type { FC } from 'react';
+import type { TRep } from '../../../types';
 interface Props {
-    text: string;
-    description?: string;
-    nameCompany?: string;
-    site?: string;
+    rep: TRep;
+
     onclickClose?: () => void;
 }
 
-export const ModalRep: FC<Props> = ({ onclickClose }) => {
+export const ModalRep: FC<Props> = ({ onclickClose, rep }) => {
     return createPortal(
         <div className="modal-rep-wrap" onClick={onclickClose}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -22,14 +21,14 @@ export const ModalRep: FC<Props> = ({ onclickClose }) => {
                 />
                 <Repository
                     className="modal-rep"
-                    id={1}
-                    description={'descript'}
-                    forks={123}
-                    name={'name'}
-                    language={'React'}
-                    watchers={555}
-                    homepage="vovaHome"
-                    topics={['kyka', 'poka', 'pika']}
+                    id={rep.id}
+                    description={rep.description}
+                    forks={rep.forks}
+                    name={rep.name}
+                    language={rep.language}
+                    watchers={rep.watchers}
+                    homepage={rep.homepage}
+                    topics={rep.topics}
                 />
             </div>
         </div>,

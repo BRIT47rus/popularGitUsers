@@ -131,7 +131,7 @@ export const Slider = () => {
                     ))}
                 {isOpenModal && selectedRep && (
                     <ModalRep
-                        text="dd"
+                        rep={selectedRep}
                         onclickClose={() => setOpenModal(false)}
                     />
                 )}

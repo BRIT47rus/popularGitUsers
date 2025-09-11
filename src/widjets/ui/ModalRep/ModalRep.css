@@ -8,14 +8,14 @@
 }
 .modal-rep-wrap {
     position: absolute;
-    top: -1em;
-    bottom: 0;
-    width: 100vw;
-    background: var(--color-bg);
     height: 100vh;
+    width: 100vw;
     display: flex;
-
+    background: #000;
     flex-direction: column;
+}
+.modal-content {
+    background: var(--color-bg);
 }
 .modal__button {
     text-align: end;
