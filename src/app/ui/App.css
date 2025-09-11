@@ -4,7 +4,50 @@
     align-items: center;
     flex-direction: column;
     min-height: 280px;
+    margin-top: 1em;
 }
 .app__header-wrap {
-    width: 280px;
+    min-width: 280px;
+    max-width: 600px;
+    text-align: center;
+}
+/* :root {
+    --color-text: #ffffff;
+    --color-accent: #0083fc;
+    --color-secondary: #b5b5b5;
+
+    --color-bg: #1e2028;
+    --color-bg-body: #272a2f;
+}
+.dark-theme {
+    --color-text: dark;
+    --color-accent: #0083fc;
+    --color-secondary: #b5b5b5;
+
+    --color-bg: #b5b5b5;
+    --color-bg-body: #ffffff;
+} */
+
+.button-theme {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 4px;
+    padding: 0 4px;
+    font-size: 1.2em;
+    text-align: center;
+
+    background: var(--color-bg-body);
+    border: 1px solid var(--color-accent);
+    color: var(--color-text);
+}
+@media (min-width: 1000px) {
+    .button-theme {
+        right: 20%;
+    }
+}
+@media (min-width: 750px) {
+    .button-theme {
+        right: 10%;
+    }
 }

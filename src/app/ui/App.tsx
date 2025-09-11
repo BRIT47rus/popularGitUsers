@@ -3,6 +3,7 @@ import { Header, Slider } from '../../widjets';
 import './App.css';
 import { store } from '../../features/store/store';
 import classNames from 'classnames';
+import { Button } from '../../shared/Button/Button';
 
 export function App() {
     const toggleTheme = () => {
@@ -19,7 +20,11 @@ export function App() {
                 </div>
                 <Slider />
             </div>
-            <button onClick={toggleTheme}>click</button>
+            <Button
+                onClick={toggleTheme}
+                className="button-theme"
+                text="THEME"
+            />
         </Provider>
     );
 }
